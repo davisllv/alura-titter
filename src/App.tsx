@@ -1,40 +1,42 @@
 import { useState } from "react";
 
 function App() {
-  console.log("Oi");
-  const [typeInput, setTypeInput] = useState("password");
+  const [isClosed, setIsClosed] = useState(true);
   return (
     <div className="w-screen flex flex-row">
-      <div
-        id="login"
-        className="w-2/5 p-10 flex flex-col gap-10 justify-center"
-      >
-        <div className="w-2/5">
-          <h1>Welcome Back</h1>
-          <p>Login to acess your account</p>
+      <div id="login" className="w-2/5 p-20 flex flex-col gap-6 justify-center">
+        <div className="w-4/5 flex flex-col gap-4">
+          <h1 className="text-6xl">Welcome Back</h1>
+          <p className="text-slate-400">Login to acess your account</p>
         </div>
 
         <div id="input-containers" className="w-full flex flex-col gap-4">
           <input
             type="text"
             placeholder="Username"
-            onFocus={() => {
-              setTypeInput("text");
-            }}
-            className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+            className="block rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
           />
-          <input
-            type={typeInput}
-            placeholder="password"
-            onFocus={() => {
-              setTypeInput("password");
-            }}
-            className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-          />
+          <div className="w-full relative">
+            <input
+              type={isClosed ? "password" : "text"}
+              placeholder="password"
+              className="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+            />
+            <button>
+              <img
+                src={`eye-${isClosed ? "closed" : "open"}.png`}
+                className="h-5 hover:cursor-pointer absolute top-2 right-2"
+                alt=""
+                onClick={() => {
+                  setIsClosed(!isClosed);
+                }}
+              />
+            </button>
+          </div>
         </div>
 
         <div className="flex flex-row gap-2">
-          <input type="checkbox" />
+          <input type="checkbox" className="p-10" />
           <a href="">Remember me</a>
         </div>
 
