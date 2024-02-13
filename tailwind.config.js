@@ -6,6 +6,12 @@ export default {
       backgroundImage: {
         "login-pattern": "url('/assets/login-user-image.jpg')",
       },
+      fontFamily: {
+        "fira-sans": "Fira Sans, sans-serif",
+      },
+      height: {
+        "55%": "55%",
+      },
     },
   },
   plugins: [],
