@@ -12,6 +12,9 @@ export default {
       height: {
         "55%": "55%",
       },
+      backgroundColor: {
+        "post-page": "#F3F4F6",
+      },
     },
   },
   plugins: [],
