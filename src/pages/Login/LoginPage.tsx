@@ -1,12 +1,13 @@
 import { redirect } from "react-router";
-import Input from "../components/input";
-import InputPassword from "../components/password";
+import Input from "../../components/input";
+import InputPassword from "../../components/password";
+import "./styles.css";
 
 const LoginPage = () => {
   const loginFunction = () => {
     console.log("OI");
-    redirect("/post-page")
-}
+    redirect("/post-page");
+  };
 
   return (
     <div className="w-screen flex flex-row font-fira-sans overflow-hidden">
@@ -30,14 +31,17 @@ const LoginPage = () => {
             <span>Remember me</span>
           </div>
 
-          <button  onClick={() => loginFunction()} className="w-full p-2.5 rounded-md border-0 text-white shadow-sm bg-blue-700 hover:brightness-90">
+          <button
+            onClick={() => loginFunction()}
+            className="w-full p-2.5 rounded-md border-0 text-white shadow-sm bg-blue-700 hover:brightness-90"
+          >
             LOGIN
           </button>
         </div>
       </div>
       <div
         id="user-image"
-        className="w-3/5 bg-login-pattern bg-cover bg-center hover:scale-105"
+        className="w-3/5 bg-login-pattern bg-cover bg-center"
       >
         <img
           src="login-user-image.jpg"

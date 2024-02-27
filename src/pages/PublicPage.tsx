@@ -16,10 +16,10 @@ const PublicPage = () => {
       <div className="text-area-box">
         <input />
       </div>
-
+      {/* 
       <div className="publications">
         <Publications key={id} data={item {publication, user, data}}/>
-      </div> 
+      </div>  */}
     </div>
   );
 };

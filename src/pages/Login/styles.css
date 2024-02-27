@@ -1,0 +1,5 @@
+@media (max-width: 900) {
+  #user-image {
+    border: 1px solid red;
+  }
+}
